@@ -23,28 +23,7 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0-me4wm.mongodb.net/SchoolDb?
 }).catch(err => {
 	console.log('ERROR:', err.message);
 });
-/*
-var MyModel = mongoose.model('TheRestaurants', new Schema({
-    code :Number,
-    EmailAdress: String,
-    name:String,
-    type:String,
-    website:String,
-    street:String,
-    number:Number,
-    city:String,
-    zip:String,
-    country:String,
-    phone:String,
-    date:Date,
-    payment:String,
-    description:String,
-    scoring:[
-        {comment:String,
-        score:Number}
-    ]
 
-})); */
 
 var MyModel = mongoose.model('ColEtu', );
 
@@ -54,20 +33,14 @@ var MyModel = mongoose.model('ColEtu', );
 
 
 app.get('/', async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    
     
 	let val= await User.find().then(
 		val=>{
-            
-            
-
-            
-
 
 res.json(val)
-        }
-		
+        
+}	
 	)
 	
 });
